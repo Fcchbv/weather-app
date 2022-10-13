@@ -1,0 +1,24 @@
+form {
+  margin: 20px 20px 40px 20px;
+}
+.current-temperature {
+  border-radius: 90px;
+  border-color: solid turquoise 5px;
+  background-color: white;
+  font-size: 24px;
+  padding: 30px;
+}
+.current-city {
+  font-size: 24px;
+}
+
+.days {
+  background-color: white;
+  padding: 20px;
+}
+.container {
+  margin-left: 20px;
+}
+.day {
+  background-color: #90b7f0;
+}
