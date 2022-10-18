@@ -8,6 +8,13 @@ form {
   font-size: 24px;
   padding: 30px;
 }
+#weather-app {
+  max-width: 600px;
+  margin: 30px auto;
+  margin-left: 85px;
+  border: 1px solid bisque;
+}
+
 .current-city {
   font-size: 24px;
 }
@@ -17,7 +24,6 @@ form {
   padding: 20px;
 }
 .container {
-  margin-left: 20px;
 }
 .day {
   background-color: #90b7f0;
