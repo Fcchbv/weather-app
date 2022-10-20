@@ -44,15 +44,19 @@ let form = document.querySelector("#search-city");
 function showTemperature(response) {
   console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
-  console.log(temperature);
   let currentTemperature = document.querySelector("#current-temperature");
-  currentTemperature.innerHTML = `${temperature}°C`;
-  console.log(currentTemperature);
   let descriprion = document.querySelector("#weather-description");
-  descriprion.innerHTML = response.data.weather[0].description;
   let windSpeed = document.querySelector("#windspeed");
   let speedOfWind = response.data.wind.speed;
+  let weatherIcon = document.querySelector("#weather-icon");
+
+  currentTemperature.innerHTML = `${temperature}°C`;
+  descriprion.innerHTML = response.data.weather[0].description;
   windSpeed.innerHTML = `Wind: ${speedOfWind} km/h`;
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function search(event) {
