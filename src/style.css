@@ -1,18 +1,27 @@
 form {
   margin: 20px 20px 40px 20px;
 }
+
+li {
+  list-style: none;
+  text-transform: capitalize;
+}
+
 .current-temperature {
   border-radius: 90px;
   border-color: solid turquoise 5px;
   background-color: white;
   font-size: 24px;
   padding: 30px;
+  margin-left: 30px;
+  margin-bottom: 20px;
 }
 #weather-app {
   max-width: 600px;
   margin: 30px auto;
   margin-left: 85px;
   border: 1px solid bisque;
+  border-radius: 20px;
 }
 
 .current-city {

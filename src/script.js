@@ -8,19 +8,52 @@ let days = [
   "Friday",
   "Saturday",
 ];
+let months = [
+  "01",
+  "02",
+  "03",
+  "04",
+  "05",
+  "06",
+  "07",
+  "08",
+  "09",
+  "10",
+  "11",
+  "12",
+];
 let day = days[now.getDay()];
 let hours = now.getHours();
 let minutes = now.getMinutes();
+let date = now.getDate();
+let month = months[now.getMonth()];
 if (minutes < 10) {
-  minutes = 0`${minutes}`;
+  minutes = `0${minutes}`;
+}
+if (hours < 10) {
+  hours = `0${minutes}`;
 }
 function formatDate() {
-  return `${day} ${hours}:${minutes}`;
+  return `${day} ${date}/${month} ${hours}:${minutes}`;
 }
 let currentTime = document.querySelector("#current-time");
 currentTime.innerHTML = formatDate();
 
 let form = document.querySelector("#search-city");
+
+function showTemperature(response) {
+  console.log(response.data);
+  let temperature = Math.round(response.data.main.temp);
+  console.log(temperature);
+  let currentTemperature = document.querySelector("#current-temperature");
+  currentTemperature.innerHTML = `${temperature}°C`;
+  console.log(currentTemperature);
+  let descriprion = document.querySelector("#weather-description");
+  descriprion.innerHTML = response.data.weather[0].description;
+  let windSpeed = document.querySelector("#windspeed");
+  let speedOfWind = response.data.wind.speed;
+  windSpeed.innerHTML = `Wind: ${speedOfWind} km/h`;
+}
 
 function search(event) {
   event.preventDefault();
@@ -35,15 +68,6 @@ function search(event) {
 }
 
 form.addEventListener("submit", search);
-
-function showTemperature(response) {
-  console.log(response.data);
-  let temperature = Math.round(response.data.main.temp);
-  console.log(temperature);
-  let currentTemperature = document.querySelector("#current-temperature");
-  currentTemperature.innerHTML = `${temperature}°C`;
-  console.log(currentTemperature);
-}
 
 /*function showWeather(response) {
   let h1 = document.querySelector("h1");
