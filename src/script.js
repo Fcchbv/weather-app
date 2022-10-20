@@ -39,8 +39,27 @@ function formatDate() {
 let currentTime = document.querySelector("#current-time");
 currentTime.innerHTML = formatDate();
 
-let form = document.querySelector("#search-city");
+let celsiusTemperature = null;
 
+let form = document.querySelector("#search-city");
+let fahrenheitConvertor = document.querySelector("#fahrenheit");
+fahrenheitConvertor.addEventListener("click", showFahrenheitTemperature);
+
+let celsiusConvertor = document.querySelector("#celsius");
+celsiusConvertor.addEventListener("click", showCelsiusTemperature);
+
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let currentTemperature = document.querySelector("#current-temperature");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  currentTemperature.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  let currentTemperature = document.querySelector("#current-temperature");
+  currentTemperature.innerHTML = Math.round(celsiusTemperature);
+}
 function showTemperature(response) {
   console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
@@ -49,6 +68,7 @@ function showTemperature(response) {
   let windSpeed = document.querySelector("#windspeed");
   let speedOfWind = response.data.wind.speed;
   let weatherIcon = document.querySelector("#weather-icon");
+  celsiusTemperature = response.data.main.temp;
 
   currentTemperature.innerHTML = `${temperature}°C`;
   descriprion.innerHTML = response.data.weather[0].description;
