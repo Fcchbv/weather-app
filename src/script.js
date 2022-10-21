@@ -31,7 +31,7 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 if (hours < 10) {
-  hours = `0${minutes}`;
+  hours = `0${hours}`;
 }
 function formatDate() {
   return `${day} ${date}/${month} ${hours}:${minutes}`;
