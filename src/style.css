@@ -37,3 +37,11 @@ li {
 .day {
   background-color: #90b7f0;
 }
+
+.forecast-maximum-temp {
+  opacity: 0.8;
+}
+
+.forecast-minimum-temp {
+  opacity: 0.5;
+}
