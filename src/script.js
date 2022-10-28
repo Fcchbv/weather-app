@@ -51,11 +51,11 @@ celsiusConvertor.addEventListener("click", showCelsiusTemperature);
 function showForecast() {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row days gx-6">`;
-  let days = ["Thu", "Fri", "Sat", "Sun"];
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
-      ` <div class="col"> <div class= "p-3 border bg-info day"> Thursday <br /> 
+      ` <div class="col"> <div class= "p-3 border bg-info day"> ${day} <br /> 
             <span class="forecast-minimum-temp">23°C</span>  <span class="forecast-maximum-temp"> 25°C </span><br /> 
             <i class="fa-solid fa-cloud-showers-heavy"></i></i></div>`;
   });
@@ -105,6 +105,8 @@ function search(event) {
   console.log(apiLink);
   axios.get(apiLink).then(showTemperature);
 }
+
+showForecast();
 
 form.addEventListener("submit", search);
 
