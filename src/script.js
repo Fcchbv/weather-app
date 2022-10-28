@@ -106,8 +106,6 @@ function search(event) {
   axios.get(apiLink).then(showTemperature);
 }
 
-showForecast();
-
 form.addEventListener("submit", search);
 
 /*function showWeather(response) {
