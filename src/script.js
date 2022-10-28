@@ -48,7 +48,7 @@ fahrenheitConvertor.addEventListener("click", showFahrenheitTemperature);
 let celsiusConvertor = document.querySelector("#celsius");
 celsiusConvertor.addEventListener("click", showCelsiusTemperature);
 
-function showForecast() {
+/*function showForecast() {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row days gx-6">`;
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
@@ -61,7 +61,7 @@ function showForecast() {
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-}
+}*/
 
 function showFahrenheitTemperature(event) {
   event.preventDefault();
